@@ -1,0 +1,852 @@
+Perfect — below is a complete, self-contained “project packet” written entirely in Markdown that you can hand directly to your son.
+
+
+
+Think of this as something between:
+
+
+
+a real-world take-home assignment, and
+a guided capstone project he can iterate on and showcase.
+
+
+
+
+You can copy/paste this into a repo as README.md (and optionally break sections into multiple .md files later).
+
+
+
+
+
+
+
+
+
+📦 Relocation Advisor App – Project Packet
+
+
+
+
+
+
+
+Project Name
+
+
+
+
+
+Relocation Advisor
+
+“Find the best place to live based on what matters to you.”
+
+
+
+
+
+
+
+
+
+1. Project Overview
+
+
+
+
+
+
+
+Objective
+
+
+
+
+
+Build a full-stack data-driven application that helps users evaluate and compare U.S. locations (state, county, or metro) based on:
+
+
+
+Cost of living
+Income & job market
+Climate preferences
+Quality-of-life indicators
+
+
+
+
+The app must:
+
+
+
+Use multiple publicly available datasets
+Normalize and model the data
+Expose a custom REST API
+Provide a modern interactive UI
+Be extensible and production-minded
+
+
+
+
+This project simulates the type of system design and implementation expected of an entry-level to mid-level data-aware software engineer or systems analyst.
+
+
+
+
+
+
+
+
+
+2. Skills This Project Builds
+
+
+
+
+
+
+
+Technical
+
+
+
+
+
+Data ingestion & cleaning
+Relational data modeling
+SQL & database design
+REST API design
+Backend development
+Frontend development
+Data visualization
+API integration
+Performance optimization
+
+
+
+
+
+
+Professional
+
+
+
+
+
+Requirements interpretation
+Technical documentation
+Incremental delivery
+Tradeoff analysis
+System thinking
+Portfolio storytelling
+
+
+
+
+
+
+
+
+
+
+3. High-Level Architecture
+
+
+
+[ Public Data Sources ]
+
+          ↓
+
+[ ETL / Data Ingestion Scripts ]
+
+          ↓
+
+[ Relational Database ]
+
+          ↓
+
+[ REST API Layer ]
+
+          ↓
+
+[ Frontend Web Application ]
+
+
+
+
+
+
+
+
+
+4. Data Sources (Required)
+
+
+
+
+
+You must use at least 3 different public data sources.
+
+
+
+
+
+Required Core Sources
+
+
+
+
+
+
+
+1. U.S. Census – American Community Survey (ACS)
+
+
+
+Used for:
+
+
+
+Median household income
+Median home value
+Rent
+Population
+Education levels
+
+
+
+
+Formats:
+
+
+
+CSV
+API
+
+
+
+
+
+
+2. Bureau of Labor Statistics (BLS)
+
+
+
+Used for:
+
+
+
+Unemployment rate
+Median wages
+Job growth trends
+
+
+
+
+Formats:
+
+
+
+API
+CSV
+
+
+
+
+
+
+3. Climate / Weather Data (Choose One)
+
+
+
+
+
+NOAA historical climate data
+NASA Earth climate datasets
+
+
+
+
+Used for:
+
+
+
+Average temperature
+Seasonal variance
+Precipitation
+
+
+
+
+
+
+
+
+
+
+5. Optional / Bonus Data Sources
+
+
+
+
+
+Data.gov
+Crime rates
+Food access
+Public health indicators
+
+FiveThirtyEight
+Cultural or lifestyle trivia
+“Fun facts” per region
+
+OpenStreetMap
+Location boundaries
+Mapping features
+
+
+
+
+
+
+
+
+
+
+
+6. Data Ingestion Requirements
+
+
+
+
+
+
+
+ETL Pipeline
+
+
+
+
+
+Create a /etl directory containing scripts that:
+
+
+
+Download or fetch raw data
+Clean and normalize fields
+Map geographic identifiers (FIPS codes)
+Load into the database
+
+
+
+
+
+
+Must Handle:
+
+
+
+
+
+Missing values
+Unit conversions
+Inconsistent naming
+Different update cadences
+
+
+
+
+
+
+Example ETL Script Responsibilities
+
+
+
+
+
+fetch_census_data.py
+fetch_bls_data.py
+fetch_climate_data.py
+normalize_locations.py
+load_database.py
+
+
+
+
+
+
+
+
+
+
+7. Database Design
+
+
+
+
+
+
+
+Core Tables
+
+
+
+
+
+
+
+locations
+
+
+
+Field
+
+Type
+
+id
+
+PK
+
+fips_code
+
+VARCHAR
+
+name
+
+VARCHAR
+
+state
+
+VARCHAR
+
+latitude
+
+FLOAT
+
+longitude
+
+FLOAT
+
+
+
+demographics
+
+
+
+Field
+
+Type
+
+location_id
+
+FK
+
+median_income
+
+INTEGER
+
+median_home_value
+
+INTEGER
+
+population
+
+INTEGER
+
+education_bachelors_pct
+
+FLOAT
+
+
+
+employment
+
+
+
+Field
+
+Type
+
+location_id
+
+FK
+
+unemployment_rate
+
+FLOAT
+
+median_wage
+
+INTEGER
+
+job_growth_rate
+
+FLOAT
+
+
+
+climate
+
+
+
+Field
+
+Type
+
+location_id
+
+FK
+
+avg_temp
+
+FLOAT
+
+avg_precip
+
+FLOAT
+
+temp_variance
+
+FLOAT
+
+
+
+
+
+
+
+
+
+8. Derived Metrics (Critical)
+
+
+
+
+
+Create computed scores based on normalized values.
+
+
+
+
+
+Example Scores
+
+
+
+
+
+Affordability Score
+Job Market Score
+Climate Comfort Score
+Education Score
+Overall Quality-of-Life Score
+
+
+
+
+Scores should be scaled (e.g., 0–100) and documented.
+
+
+
+
+
+
+
+
+
+9. API Requirements
+
+
+
+
+
+
+
+Base Requirements
+
+
+
+
+
+RESTful design
+JSON responses
+Pagination
+Filtering
+Sorting
+Input validation
+Error handling
+
+
+
+
+
+
+Example Endpoints
+
+
+
+GET /locations
+
+GET /locations/{id}
+
+GET /rankings
+
+GET /compare
+
+POST /preferences
+
+
+
+Example Query Parameters
+
+
+
+/rankings?
+
+  income_weight=0.3&
+
+  climate_weight=0.2&
+
+  cost_weight=0.3&
+
+  jobs_weight=0.2
+
+
+
+
+
+
+
+
+
+10. Frontend Requirements
+
+
+
+
+
+
+
+Core Pages
+
+
+
+
+
+Home / Landing
+Explore Map
+Rankings Dashboard
+Location Detail Page
+Comparison View
+
+
+
+
+
+
+Required UI Features
+
+
+
+
+
+Interactive map
+Preference sliders
+Sortable tables
+Charts (bar, radar, line)
+Responsive design
+
+
+
+
+
+
+Suggested Libraries
+
+
+
+
+
+React / Vue
+Chart.js / Recharts
+Leaflet / Mapbox
+
+
+
+
+
+
+
+
+
+
+11. Gamification (Fun but Valuable)
+
+
+
+
+
+Add one of the following:
+
+
+
+Badges for exploring regions
+“Did you know?” trivia per location
+Shareable rankings
+Personal relocation profile
+
+
+
+
+
+
+
+
+
+
+12. Non-Functional Requirements
+
+
+
+
+
+Clean repo structure
+Meaningful commit history
+Clear README
+Environment config via .env
+Basic performance optimization
+Clear separation of concerns
+
+
+
+
+
+
+
+
+
+
+13. Stretch Goals (Optional)
+
+
+
+
+
+Authentication & saved preferences
+Caching (Redis)
+Scheduled data refresh
+Dockerized deployment
+CI/CD pipeline
+Public demo deployment
+
+
+
+
+
+
+
+
+
+
+14. Evaluation Rubric
+
+
+
+Area
+
+Weight
+
+Data Modeling
+
+25%
+
+API Design
+
+20%
+
+Data Cleaning
+
+15%
+
+UI/UX
+
+15%
+
+Code Quality
+
+15%
+
+Documentation
+
+10%
+
+
+
+
+
+
+
+
+
+15. Deliverables
+
+
+
+
+
+GitHub repository
+README.md
+Architecture diagram
+ER diagram
+API documentation
+Live demo (optional)
+
+
+
+
+
+
+
+
+
+
+16. How to Present This in Interviews
+
+
+
+
+
+“I built a relocation decision platform that integrates multiple federal datasets, normalizes them into a unified data model, exposes a custom scoring API, and renders an interactive UI that lets users dynamically rank locations based on personal priorities.”
+
+
+
+That sentence alone is resume gold.
+
+
+
+
+
+
+
+
+
+17. Final Note to the Builder
+
+
+
+
+
+This project is not about perfection.
+
+
+
+It’s about:
+
+
+
+making decisions,
+documenting tradeoffs,
+and shipping something real.
+
+
+
+
+Build it in phases. Refactor later. Learn constantly.
