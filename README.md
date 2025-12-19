@@ -107,14 +107,15 @@ A web application where users can:
 | 1 | Database Design | Schema design, PostgreSQL setup | 4-5 days |
 | 2 | ETL: Census | First data pipeline, Census API | 5-6 days |
 | 3 | ETL: Additional | BLS + Climate data integration | 5-6 days |
-| 4 | Core API | FastAPI basics, CRUD endpoints | 5-6 days |
-| 5 | Scoring Engine | Weighted scoring, rankings API | 4-5 days |
-| 6 | Frontend Foundation | React setup, routing, components | 5-6 days |
-| 7 | Frontend Features | Map, charts, interactive UI | 6-7 days |
-| 8 | Integration & Testing | End-to-end testing, bug fixes | 4-5 days |
-| 9 | Deployment & Docs | Docker, deployment, documentation | 4-5 days |
+| 4 | Data Analysis | Power BI, data visualization, insights | 4-5 days |
+| 5 | Core API | FastAPI basics, CRUD endpoints | 5-6 days |
+| 6 | Scoring Engine | Weighted scoring, rankings API | 4-5 days |
+| 7 | Frontend Foundation | React setup, routing, components | 5-6 days |
+| 8 | Frontend Features | Map, charts, interactive UI | 6-7 days |
+| 9 | Integration & Testing | End-to-end testing, bug fixes | 4-5 days |
+| 10 | Deployment & Docs | Docker, deployment, documentation | 4-5 days |
 
-**Total Estimated Time: 8-10 weeks** (working ~4-6 hours/day)
+**Total Estimated Time: 9-11 weeks** (working ~4-6 hours/day)
 
 ---
 

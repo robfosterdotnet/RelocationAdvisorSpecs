@@ -42,4 +42,4 @@ Expected: Each table should have 2,500+ records.
 
 ---
 
-*Proceed to `../sprint-4-core-api/`*
+*Proceed to `../sprint-4-data-analysis/`*

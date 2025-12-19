@@ -137,7 +137,41 @@ _Approximately how many hours?_
 
 ---
 
-## Sprint 4: Core API
+## Sprint 4: Data Analysis & Visualization
+
+**Date Started:** _______________
+**Date Completed:** _______________
+
+### What I Did
+- [ ] Installed Power BI Desktop
+- [ ] Connected to PostgreSQL database
+- [ ] Built data model with relationships
+- [ ] Created visualizations and dashboards
+- [ ] Documented data quality findings
+
+### What I Learned
+_What did you learn about data analysis and BI tools?_
+
+
+
+### Challenges & Solutions
+_What challenges did you face with Power BI or data analysis?_
+
+
+
+### Key Insights Discovered
+_What interesting patterns or findings did you discover in the data?_
+
+
+
+### Time Spent
+_Approximately how many hours?_
+
+
+
+---
+
+## Sprint 5: Core API
 
 **Date Started:** _______________
 **Date Completed:** _______________
@@ -165,7 +199,7 @@ _Approximately how many hours?_
 
 ---
 
-## Sprint 5: Scoring Engine
+## Sprint 6: Scoring Engine
 
 **Date Started:** _______________
 **Date Completed:** _______________
@@ -198,7 +232,7 @@ _Approximately how many hours?_
 
 ---
 
-## Sprint 6: Frontend Foundation
+## Sprint 7: Frontend Foundation
 
 **Date Started:** _______________
 **Date Completed:** _______________
@@ -226,7 +260,7 @@ _Approximately how many hours?_
 
 ---
 
-## Sprint 7: Frontend Features
+## Sprint 8: Frontend Features
 
 **Date Started:** _______________
 **Date Completed:** _______________
@@ -254,7 +288,7 @@ _Approximately how many hours?_
 
 ---
 
-## Sprint 8: Testing & Polish
+## Sprint 9: Testing & Polish
 
 **Date Started:** _______________
 **Date Completed:** _______________
@@ -282,7 +316,7 @@ _Approximately how many hours?_
 
 ---
 
-## Sprint 9: Deployment
+## Sprint 10: Deployment
 
 **Date Started:** _______________
 **Date Completed:** _______________

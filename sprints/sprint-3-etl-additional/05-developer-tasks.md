@@ -82,4 +82,4 @@ git push
 
 ---
 
-*After completion, proceed to `../sprint-4-core-api/`*
+*After completion, proceed to `../sprint-4-data-analysis/`*
